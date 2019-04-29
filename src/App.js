@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Document, Page, pdfjs } from 'react-pdf';
+import pdfPath from './assets/ConfirmationOfCoverage-2.pdf';
 import './App.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.1.266/pdf.worker.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Document
+        file={pdfPath}
+        // onLoadSuccess={this.onDocumentLoadSuccess}
+      >
+        <Page width={document.documentElement.clientWidth} pageNumber={1} />
+      </Document>
     </div>
   );
 }

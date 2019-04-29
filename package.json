@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "pdfjs-dist": "^2.0.943",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-pdf": "^4.0.5",
     "react-scripts": "3.0.0"
   },
   "scripts": {
